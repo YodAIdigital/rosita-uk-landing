@@ -362,52 +362,19 @@
         }
 
         .hero__product {
-            width: 320px;
-            height: 440px;
-            background: linear-gradient(145deg, rgba(201, 168, 76, 0.15) 0%, rgba(201, 168, 76, 0.05) 50%, rgba(10, 22, 40, 0.3) 100%);
-            border: 1px solid rgba(201, 168, 76, 0.2);
+            width: 420px;
+            max-width: 100%;
             border-radius: var(--radius-lg);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
             position: relative;
             overflow: hidden;
         }
 
-        .hero__product::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(145deg, rgba(201, 168, 76, 0.3), transparent 50%, rgba(201, 168, 76, 0.1));
+        .hero__product img {
+            width: 100%;
+            height: auto;
             border-radius: var(--radius-lg);
-            z-index: -1;
-        }
-
-        .hero__product-icon {
-            width: 80px;
-            height: 80px;
-            color: var(--gold);
-            opacity: 0.6;
-        }
-
-        .hero__product-label {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            color: var(--gold);
-            font-weight: 500;
-            letter-spacing: 0.05em;
-        }
-
-        .hero__product-sublabel {
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.4);
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            display: block;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(201, 168, 76, 0.1);
         }
 
         .hero__glow {
@@ -521,50 +488,17 @@
 
         .solution__image {
             width: 100%;
-            aspect-ratio: 4/5;
-            background: linear-gradient(145deg, #f0e6c8 0%, #e8d5a0 30%, #c9a84c 60%, #b8953a 100%);
             border-radius: var(--radius-lg);
-            border: 3px solid var(--gold);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
             position: relative;
             overflow: hidden;
             box-shadow: var(--shadow-xl);
         }
 
-        .solution__image::after {
-            content: '';
-            position: absolute;
-            inset: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: calc(var(--radius-lg) - 4px);
-            pointer-events: none;
-        }
-
-        .solution__image-icon {
-            width: 64px;
-            height: 64px;
-            color: var(--navy);
-            opacity: 0.5;
-        }
-
-        .solution__image-label {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--navy);
-            font-weight: 600;
-            letter-spacing: 0.03em;
-        }
-
-        .solution__image-sub {
-            font-size: 0.75rem;
-            color: var(--navy);
-            opacity: 0.5;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
+        .solution__image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--radius-lg);
         }
 
         .solution__features {
@@ -813,10 +747,23 @@
             padding: 120px 0;
         }
 
+        .heritage__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
         .heritage__content {
             max-width: 760px;
             margin: 0 auto;
-            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .heritage__grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
         }
 
         .heritage__divider {
@@ -991,22 +938,20 @@
         }
 
         .product__image {
-            width: 120px;
-            height: 160px;
+            width: 180px;
+            height: 220px;
             margin: 0 auto 24px;
-            background: linear-gradient(145deg, rgba(201, 168, 76, 0.15), rgba(201, 168, 76, 0.05));
             border-radius: var(--radius-sm);
-            border: 1px solid rgba(201, 168, 76, 0.2);
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .product__image svg {
-            width: 40px;
-            height: 40px;
-            color: var(--gold);
-            opacity: 0.5;
+        .product__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .product__name {
@@ -1292,8 +1237,8 @@
             }
 
             .hero__product {
-                width: 240px;
-                height: 320px;
+                width: 300px;
+                max-width: 100%;
             }
 
             .problem__grid {
@@ -1410,9 +1355,7 @@
                 <div class="hero__visual">
                     <div class="hero__glow"></div>
                     <div class="hero__product">
-                        <svg class="hero__product-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l2 4H6l2-4zM6 6v12a2 2 0 002 2h8a2 2 0 002-2V6"/><path d="M10 10v4M14 10v4"/></svg>
-                        <span class="hero__product-label">Rosita EVCLO</span>
-                        <span class="hero__product-sublabel">Extra Virgin Cod Liver Oil</span>
+                        <img src="images/hero-image.png" alt="Rosita Extra Virgin Cod Liver Oil bottle on marble surface with Norwegian fjord backdrop" loading="eager">
                     </div>
                 </div>
             </div>
@@ -1465,9 +1408,7 @@
             </div>
             <div class="solution__grid">
                 <div class="solution__image fade-in">
-                    <svg class="solution__image-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l2 4H6l2-4zM6 6v12a2 2 0 002 2h8a2 2 0 002-2V6"/><path d="M10 10v4M14 10v4"/></svg>
-                    <span class="solution__image-label">Rosita EVCLO</span>
-                    <span class="solution__image-sub">150ml &middot; Extra Virgin</span>
+                    <img src="images/norwegian-scene.png" alt="Rosita cod liver oil on Norwegian fishing dock with colourful village backdrop" loading="lazy">
                 </div>
                 <div class="solution__features fade-in">
                     <div class="solution__feature">
@@ -1628,16 +1569,33 @@
     <!-- ===== HERITAGE ===== -->
     <section class="heritage section" id="heritage">
         <div class="container">
-            <div class="heritage__content fade-in">
-                <span class="section-eyebrow">Our Story</span>
-                <h2 class="section-title">From a Norwegian Island Kitchen to Yours</h2>
-                <div class="heritage__divider">
-                    <div class="heritage__divider-line"></div>
-                    <div class="heritage__divider-diamond"></div>
-                    <div class="heritage__divider-line"></div>
+            <div class="heritage__grid fade-in">
+                <div class="heritage__image-col">
+                    <img src="images/benefits-image.png" alt="Rosita cod liver oil with fresh salmon, lemons and avocado on a cutting board" loading="lazy" style="width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-xl);">
                 </div>
-                <p class="heritage__body">On the small island of <strong>Donna</strong> in northern Norway, the Svensson-Nyland family has fished these waters for generations. They call cod liver oil <strong>&ldquo;gold of the ocean.&rdquo;</strong> What began as a family tradition to stay healthy through freezing Norwegian winters is now shared with health-conscious families across the UK. Every bottle is still crafted in small batches, on their own boats, using the same ancient cold-extraction methods that have been passed down through the centuries.</p>
-                <p class="heritage__attribution">Donna Island, Northern Norway</p>
+                <div class="heritage__content">
+                    <span class="section-eyebrow">Our Story</span>
+                    <h2 class="section-title" style="text-align:left;">From a Norwegian Island Kitchen to Yours</h2>
+                    <div class="heritage__divider">
+                        <div class="heritage__divider-line"></div>
+                        <div class="heritage__divider-diamond"></div>
+                        <div class="heritage__divider-line"></div>
+                    </div>
+                    <p class="heritage__body">On the small island of <strong>Donna</strong> in northern Norway, the Svensson-Nyland family has fished these waters for generations. They call cod liver oil <strong>&ldquo;gold of the ocean.&rdquo;</strong> What began as a family tradition to stay healthy through freezing Norwegian winters is now shared with health-conscious families across the UK. Every bottle is still crafted in small batches, on their own boats, using the same ancient cold-extraction methods that have been passed down through the centuries.</p>
+                    <p class="heritage__attribution">Donna Island, Northern Norway</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WELLNESS BANNER ===== -->
+    <section style="padding:0;position:relative;overflow:hidden;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+            <div style="position:relative;overflow:hidden;">
+                <img src="images/softgel-lifestyle.png" alt="Rosita softgels on a clean bathroom shelf with morning light" loading="lazy" style="width:100%;height:300px;object-fit:cover;display:block;">
+            </div>
+            <div style="position:relative;overflow:hidden;">
+                <img src="images/family-wellness.png" alt="Rosita cod liver oil on a cosy breakfast table with tea and berries" loading="lazy" style="width:100%;height:300px;object-fit:cover;display:block;">
             </div>
         </div>
     </section>
@@ -1716,7 +1674,7 @@
             <div class="products__grid">
                 <div class="product__card product__card--featured fade-in fade-in-delay-1">
                     <div class="product__image">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l2 4H6l2-4zM6 6v12a2 2 0 002 2h8a2 2 0 002-2V6"/><path d="M10 10v4M14 10v4"/></svg>
+                        <img src="images/liquid-bottle.jpg" alt="Rosita Extra Virgin Cod Liver Oil Liquid 150ml" loading="lazy">
                     </div>
                     <h3 class="product__name">Liquid</h3>
                     <div class="product__price"><span>From </span>&pound;38</div>
@@ -1742,7 +1700,7 @@
                 </div>
                 <div class="product__card fade-in fade-in-delay-2">
                     <div class="product__image">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="10"/></svg>
+                        <img src="images/softgel-bottle.webp" alt="Rosita Extra Virgin Cod Liver Oil Softgels 90 capsules" loading="lazy">
                     </div>
                     <h3 class="product__name">Softgels</h3>
                     <div class="product__price"><span>From </span>&pound;40</div>
